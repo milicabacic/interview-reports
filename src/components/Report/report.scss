@@ -1,0 +1,19 @@
+.report {
+    display: flex;
+
+
+    div{
+        padding: 25px;
+        border: 1px solid black;
+        margin: 10px 0;
+       
+    }
+    .report-icons {
+        display: flex;
+        img{
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+        }
+    }
+}
