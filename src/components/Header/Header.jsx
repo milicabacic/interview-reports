@@ -2,7 +2,7 @@ import "./header.scss";
 
 const Header = () => {
     return (<div className="header">
-        <h2>Interview Reports</h2>
+        <h4>Interview reports</h4>
     </div>);
 }
 

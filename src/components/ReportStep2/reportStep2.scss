@@ -1,0 +1,13 @@
+.companies-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .company{
+        min-width: 400px;
+        padding: 5px;
+        border: 1px solid black;
+        margin-left: 25px;
+    }
+}
