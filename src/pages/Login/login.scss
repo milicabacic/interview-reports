@@ -1,3 +1,43 @@
-.login-container{
-    margin-top: 15px;
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+    h3 {
+        padding: 15px 0;
+        letter-spacing: 2px;
+    }
+
+    button {
+        padding: 5px 25px;
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 25px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: gainsboro;
+            color: black;
+        }
+    }
+
 }
+
+
+.login-container {
+    .login-placeholder {
+        display: flex;
+        flex-direction: column;
+        height: 250px;
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+}
+

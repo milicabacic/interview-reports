@@ -8,7 +8,7 @@ const TableRow = () => {
         <td>Company</td>
         <td>Interview Date</td>
         <td>Status</td>
-        <td><img src={insight}></img></td>
+        <td id="insight"><img src={insight}></img></td>
       </tr>
     </div>
   );

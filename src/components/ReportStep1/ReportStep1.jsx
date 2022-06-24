@@ -23,7 +23,7 @@ const ReportStep1 = () => {
 
 
         <div className="next-button">
-            <button>Next</button>
+            <button>NEXT</button>
         </div>
     </div>
 }

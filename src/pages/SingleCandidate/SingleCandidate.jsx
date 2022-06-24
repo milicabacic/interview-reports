@@ -2,8 +2,14 @@ import Header from "../../components/Header/Header";
 import TableRow from "../../components/TableRow/TableRow";
 import avatar from "../../images/UserAvatar.png";
 import "./singleCandidate.scss";
+import { UserContext } from "../../App";
+import { useContext } from "react";
 
 const SingleCandidate = () => {
+
+  const {userToken, setUserToken} = useContext(UserContext);
+
+
   return (
     <div className="single-candidate">
       <Header></Header>
@@ -19,18 +25,17 @@ const SingleCandidate = () => {
             <h3>Education:</h3>
           </div>
         </div>
+        <div className="line">
+
+        <hr></hr>
+        </div>
         <div className="reports">
           <h2>Reports</h2>
           <table className="reports-table">
-            <tr>
-              <td>Company</td>
-              <td>Interview Date</td>
-              <td>Status</td>
-            </tr>
-          </table>
-          {[1, 2, 3, 4, 5].map((e) => (
+            {[1, 2, 3, 4, 5].map((e) => (
               <TableRow></TableRow>
             ))}
+          </table>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import Login from "./pages/Login/Login";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import SingleCandidate from "./pages/SingleCandidate/SingleCandidate";
@@ -8,6 +8,9 @@ import { useState } from "react";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import ReactPortal from "./ReactPortal/ReactPortal";
 import Modal from "./components/Modal/Modal";
+import ReportStep1 from "./components/ReportStep1/ReportStep1";
+import ReportStep2 from "./components/ReportStep2/ReportStep2";
+import ReportStep3 from "./components/ReportStep3/ReportStep3";
 import "./app.scss";
 
 const App = () => {
@@ -15,7 +18,10 @@ const App = () => {
   const navigate = useNavigate();
   return (
     <>
+    <UserContext.Provider value={{userToken,setUserToken}}>
+    
       <Routes>
+      
         <Route
           path="/login"
           element={
@@ -36,17 +42,20 @@ const App = () => {
         <Route
           path="/new-report"
           element={
-            userToken ? (
-              <CreateReport></CreateReport>
-            ) : (
-              <Navigate to="/login"></Navigate>
-            )
-          }
-        ></Route>
+          <CreateReport/>
+          }>
+          <Route path="step/1" element={<ReportStep1></ReportStep1>}></Route>
+            <Route path="step/2" element={<ReportStep2></ReportStep2>}></Route>
+            <Route path="step/3" element={<ReportStep3></ReportStep3>}></Route>
+        </Route>
       </Routes>
       {/* <ReactPortal children={<Modal></Modal>}></ReactPortal> */}
+      </UserContext.Provider>
     </>
   );
 };
 
+
 export default App;
+export const UserContext = createContext({});
+
